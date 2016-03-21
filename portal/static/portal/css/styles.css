@@ -1,0 +1,229 @@
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+.header-text {
+  font-weight: bold;
+  font-size: 19px;
+}
+.contact-us {
+  margin-top: 30px;
+  color: #2a2a2a;
+  font-weight: bold;
+  font-size: 19px;
+}
+.title {
+  font-size: 31px;
+  color: #2a2a2a;
+  font-weight: bold;
+  margin-top: 5px;
+}
+.subtitle {
+  margin-top: -7px;
+  color: #69987d;
+  font-weight: bold;
+  font-size: 19px;
+}
+.header-rule {
+  border-color: #505050;
+}
+.nav {
+  font-weight: bold;
+  font-size: 19px;
+  color: #69987d;
+  text-align: center;
+  cursor: pointer;
+}
+.nav:hover {
+  text-decoration: underline;
+  text-decoration-color: #bed0c5;
+}
+.main-photo-box {
+  margin-top: 20px;
+  background-color: #c5c5c5;
+  width: 90%;
+  height: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  color: #f4f4f4;
+  font-size: 19px;
+  line-height: 350px;
+  display: none;
+}
+.homepage-content {
+  margin-top: 30px;
+}
+.sub-rule {
+  width: 80%;
+  border-color: #d7d7d7;
+}
+.main-content {
+  font-size: 19px;
+  color: #6c6e6f;
+}
+.main-left-content {
+  font-size: 19px;
+  color: #6c6e6f;
+}
+.main-right-content {
+  font-size: 19px;
+  color: #6c6e6f;
+  font-weight: bold;
+}
+.disease-index {
+  background-color: #d6d6d6;
+  margin-top: 20px;
+}
+.disease-index-title {
+  font-weight: bold;
+  font-size: 19px;
+  padding-top: 5px;
+  color: #69987d;
+  text-align: center;
+}
+.diseases {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+.disease-index-image {
+  width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+  height: 100px;
+  background-color: white;
+  line-height: 170px;
+  text-align: center;
+  font-size: 19px;
+  color: #6c6e6f;
+  display: none;
+}
+.nav-menu {
+  margin-bottom: 20px;
+}
+.alpha-search {
+  color: #2a2a2a;
+  font-size: 31px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+.alpha-search:hover {
+  text-decoration: underline;
+}
+.search-box {
+  color: #69987d;
+  height: 40px;
+  font-size: 19px;
+  width: 150px;
+  margin-left: 5px;
+  position: relative;
+  top: -6px;
+}
+.search-container {
+  margin-top: 20px;
+}
+.disease-list {
+  margin-top: 50px;
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  border-right: 1px solid #d7d7d7;
+  min-height: 500px;
+}
+.disease {
+  font-size: 19px;
+  color: #6c6e6f;
+  cursor: pointer;
+}
+.disease:hover {
+  text-decoration: underline;
+}
+.disease-bio {
+  background-color: #d7d7d7;
+  min-height: 500px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 25px;
+  margin-top: 20px;
+  padding-bottom: 20px;
+}
+.disease-name {
+  font-size: 24px;
+  color: #ffffff;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.disease-title {
+  font-size: 19px;
+  color: #ffffff;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+.disease-box {
+  background-color: #aeaeae;
+  min-height: 100px;
+  margin-bottom: 20px;
+  padding: 10px 15px;
+  font-size: 16px;
+  color: #ffffff;
+}
+.testimonial-bio {
+  background-color: #d7d7d7;
+  min-height: 500px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 25px;
+  margin-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  padding-top: 30px;
+}
+#testimonial-video {
+  width: 400px;
+}
+.testimonial-meta-data {
+  margin-top: 50px;
+}
+#testimonial-body {
+  background-color: #aeaeae;
+  min-height: 100px;
+  margin-bottom: 20px;
+  padding: 10px 15px;
+  font-size: 16px;
+  color: #ffffff;
+  min-height: 300px;
+  text-align: left;
+}
+#testimonial-patient-num {
+  float: left;
+  font-size: 19px;
+  color: #ffffff;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+#testimonial-patient-lang {
+  float: right;
+  font-size: 19px;
+  color: #ffffff;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+.testimonial-meta-data:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+.testimonial {
+  font-size: 19px;
+  color: #6c6e6f;
+  cursor: pointer;
+}
