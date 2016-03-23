@@ -114,7 +114,7 @@
 				});
 				this.style.textDecoration = 'underline';
 				this.style.color = '#69987d';
-				var let = new Letter(this.innerHTML, '/portal/letter');
+				var let = new Letter(this.innerHTML, '/portal/v1/letter');
 				let.fetch(updateView);
 				
 
@@ -124,7 +124,7 @@
 			$('.search-box').keyup(function(e){
 				//checks if enter key pressed				
 				if(e.keyCode == 13){
-					var let = new Letter(this.value, '/portal/letter');
+					var let = new Letter(this.value, '/portal/v1/letter');
 					let.fetch(updateView);
 				}
 			});
