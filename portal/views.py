@@ -10,6 +10,9 @@ def illness(request):
 def testimonials(request):
 	return render(request,"portal/testimonials.html")
 
+def philosophy(request):
+	return render(request, "portal/philosophy.html")
+
 def get_illness(request, letter=None):
 	illness_list = Illness.objects.filter(name__startswith=letter)
 	return HttpResponse(serializers.serialize('json', illness_list))
