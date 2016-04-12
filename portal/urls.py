@@ -8,4 +8,6 @@ urlpatterns = [
 	url(r'^illness', views.illness),
 	url(r'^testimonials', views.testimonials),
 	url(r'^philosophy', views.philosophy),
+	url(r'^about', views.about),
+	url(r'^faq', views.faq),
 ]
