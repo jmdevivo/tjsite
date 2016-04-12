@@ -1,136 +1,101 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<title>Disease Index</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
-		{% load staticfiles %}
-		<link rel='stylesheet' href="{% static 'portal/css/styles.css' %}"/>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-		<script src='js/Letter.js'></script>
-		<script src='js/Disease.js'></script>
-	</head>
-	<body>
+{% extends 'portal/base.html'%}
 
-		<div class="container">
-			<div class='row'>
-				<div class='col-md-9'>
-					<div class='title'>Dr. Dickface M.D</div>
-					<div class='subtitle'>Your mentor for a healthy life</div>
-				</div>
-				<div class='contact-us col-md-3'>
-					<span >Contact Us: 718-322-8389</span>
-				</div>
-			</div>
-			<div class='row'>
-				<hr class='header-rule'/>
-			</div>	
-			<div class='nav-menu row'>
-				
-				<div class='nav col-md-2'><a href='/'>Home</a></div>
-				<div class='nav col-md-2'>Philosophy</div>
-				<div class='nav col-md-2'><a href='/portal/illness'>Disease Index</a></div>
-				<div class='nav col-md-2'><a href='/portal/testimonials'>Testimonials</a></div>
-				<div class='nav col-md-2'>About Us</div>
-				<div class='nav col-md-2'>FAQ</div>
-			</div>
-			<div class='row'>
-				<div class='col-md-1'></div>
-				<div class='col-md-10 search-container'>
-					<span class='alpha-search'>A</span>
-					<span class='alpha-search'>B</span>
-					<span class='alpha-search'>C</span>
-					<span class='alpha-search'>D</span>
-					<span class='alpha-search'>E</span>
-					<span class='alpha-search'>F</span>
-					<span class='alpha-search'>G</span>
-					<span class='alpha-search'>H</span>
-					<span class='alpha-search'>I</span>
-					<span class='alpha-search'>J</span>
-					<span class='alpha-search'>K</span>
-					<span class='alpha-search'>L</span>
-					<span class='alpha-search'>M</span>
-					<span class='alpha-search'>N</span>
-					<span class='alpha-search'>O</span>
-					<span class='alpha-search'>P</span>
-					<span class='alpha-search'>Q</span>
-					<span class='alpha-search'>R</span>
-					<span class='alpha-search'>S</span>
-					<span class='alpha-search'>T</span>
-					<span class='alpha-search'>U</span>
-					<span class='alpha-search'>V</span>
-					<span class='alpha-search'>W</span>
-					<span class='alpha-search'>X</span>
-					<span class='alpha-search'>Y</span>
-					<span class='alpha-search'>Z</span>
-					<input type='text' class='search-box' placeholder='search'></input>
-				</div>
-			</div>
-			<div class='row'>
-				<div class='disease-list col-md-2'>
-					
-				</div>
-				<div class='col-md-10'>
-					<div class='disease-bio'>
-						<div class='disease-name'>Asthma</div>
-						<div id='disease-description' class='disease-box'></div>
-						<div class='disease-title'>Causes</div>
-						<div id='disease-causes' class='disease-box'></div>
-						<div class='disease-title'>Symptoms</div>
-						<div id='disease-symptoms' class='disease-box'></div>
-						<div class='disease-title'>Risk Factors</div>
-						<div id='disease-risk-factors' class='disease-box'></div>
-						<div class='disease-title'>Videos</div>
-						<div id='disease-videos'></div>
-					</div>
-
-				</div>
-			</div>
+{% block content %}
+	<div class='row'>
+		<div class='col-md-1'></div>
+		<div class='col-md-10 search-container'>
+			<span class='alpha-search'>A</span>
+			<span class='alpha-search'>B</span>
+			<span class='alpha-search'>C</span>
+			<span class='alpha-search'>D</span>
+			<span class='alpha-search'>E</span>
+			<span class='alpha-search'>F</span>
+			<span class='alpha-search'>G</span>
+			<span class='alpha-search'>H</span>
+			<span class='alpha-search'>I</span>
+			<span class='alpha-search'>J</span>
+			<span class='alpha-search'>K</span>
+			<span class='alpha-search'>L</span>
+			<span class='alpha-search'>M</span>
+			<span class='alpha-search'>N</span>
+			<span class='alpha-search'>O</span>
+			<span class='alpha-search'>P</span>
+			<span class='alpha-search'>Q</span>
+			<span class='alpha-search'>R</span>
+			<span class='alpha-search'>S</span>
+			<span class='alpha-search'>T</span>
+			<span class='alpha-search'>U</span>
+			<span class='alpha-search'>V</span>
+			<span class='alpha-search'>W</span>
+			<span class='alpha-search'>X</span>
+			<span class='alpha-search'>Y</span>
+			<span class='alpha-search'>Z</span>
+			<input type='text' class='search-box' placeholder='search'></input>
 		</div>
-		<script>
-
-
-			//the function that updates the view in illness.php
-			var updateView = function(){
-				$('.disease').click(function(){
-					$('.disease').each(function(){
-						this.style.textDecoration = 'none';
-						this.style.color = '#6c6e6f';
-					});
-					this.style.color = '#69987d';
-					this.style.textDecoration = 'underline';
-					this.disease.render();
-				});
-			}
-
-			//Event listener for search by alphabet
-			$('.alpha-search').click(function(){
-				
-				$('.alpha-search').each(function() {
-					this.style.textDecoration = 'none';
-					this.style.color = '#6c6e6f';
-				});
-				this.style.textDecoration = 'underline';
-				this.style.color = '#69987d';
-				var let = new Letter(this.innerHTML, '/portal/v1/letter');
-				let.fetch(updateView);
-				
-
-			});
-
-			//Event listener for search box
-			$('.search-box').keyup(function(e){
-				//checks if enter key pressed				
-				if(e.keyCode == 13){
-					var let = new Letter(this.value, '/portal/v1/letter');
-					let.fetch(updateView);
-				}
-			});
-
-
+	</div>
+	<div class='row'>
+		<div class='disease-list col-md-2'>
 			
-		</script>
-	</body>
-</html>
+		</div>
+		<div class='col-md-10'>
+			<div class='disease-bio'>
+				<div class='disease-name'>Asthma</div>
+				<div id='disease-description' class='disease-box'></div>
+				<div class='disease-title'>Causes</div>
+				<div id='disease-causes' class='disease-box'></div>
+				<div class='disease-title'>Symptoms</div>
+				<div id='disease-symptoms' class='disease-box'></div>
+				<div class='disease-title'>Risk Factors</div>
+				<div id='disease-risk-factors' class='disease-box'></div>
+				<div class='disease-title'>Videos</div>
+				<div id='disease-videos'></div>
+			</div>
+
+		</div>
+	</div>
+</div>
+{% endblock content %}
+
+{% block scripts %}
+<script>
+	//the function that updates the view in illness.php
+	var updateView = function(){
+		$('.disease').click(function(){
+			$('.disease').each(function(){
+				this.style.textDecoration = 'none';
+				this.style.color = '#6c6e6f';
+			});
+			this.style.color = '#69987d';
+			this.style.textDecoration = 'underline';
+			this.disease.render();
+		});
+	}
+
+	//Event listener for search by alphabet
+	$('.alpha-search').click(function(){
+		
+		$('.alpha-search').each(function() {
+			this.style.textDecoration = 'none';
+			this.style.color = '#6c6e6f';
+		});
+		this.style.textDecoration = 'underline';
+		this.style.color = '#69987d';
+		var let = new Letter(this.innerHTML, '/portal/v1/letter');
+		let.fetch(updateView);
+		
+
+	});
+
+	//Event listener for search box
+	$('.search-box').keyup(function(e){
+		//checks if enter key pressed				
+		if(e.keyCode == 13){
+			var let = new Letter(this.value, '/portal/v1/letter');
+			let.fetch(updateView);
+		}
+	});
+
+
+	
+</script>
+{% endblock scripts %}

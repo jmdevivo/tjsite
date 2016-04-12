@@ -1,40 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<title>Home Page</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
-		{% load staticfiles %}
-		<link rel='stylesheet' href="{% static 'portal/css/styles.css' %}"/>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-	</head>
-	<body>
 
-		<div class="container">
-			<div class='row'>
-				<div class='col-md-9'>
-					<div class='title'>Dr. Dickface M.D</div>
-					<div class='subtitle'>Your mentor for a healthy life</div>
-				</div>
-				<div class='contact-us col-md-3'>
-					<span >Contact Us: 718-322-8389</span>
-				</div>
-			</div>
-			<div class='row'>
-				<hr class='header-rule'/>
-			</div>	
-			<div class='nav-menu row'>
-				
-				<div class='nav col-md-2'><a href='/'>Home</a></div>
-				<div class='nav col-md-2'>Philosophy</div>
-				<div class='nav col-md-2'><a href='/portal/illness'>Disease Index</a></div>
-				<div class='nav col-md-2'><a href='/portal/testimonials`'>Testimonials</a></div>
-				<div class='nav col-md-2'>About Us</div>
-				<div class='nav col-md-2'>FAQ</div>
-				
-			</div>
+{% extends 'portal/base.html'%}
+
+
+{% block content%}
 			<div class='row'>
 				<div class='col-md-4'>
 					<div class='main-photo-box' style='background-image: url(images/example2.jpg)'>About the Doctor</div>
@@ -106,14 +74,13 @@
 						</a>
 					</div>
 				</div>
+{% endblock content %}
 
-			</div>
-		</div>
-		<script>
-			//here the visual effects for the main page will be added
-			//the visual effects are implemented through javascript 
-			$('.main-photo-box').fadeIn(1200);
-			$('.disease-index-image').fadeIn(1600);
-		</script>
-	</body>
-</html>
+{% block scripts %}
+<script>
+	//here the visual effects for the main page will be added
+	//the visual effects are implemented through javascript 
+	$('.main-photo-box').fadeIn(1200);
+	$('.disease-index-image').fadeIn(1600);
+</script>
+{% endblock scripts %}
