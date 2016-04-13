@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from models import Illness, Testimonial
 from django.core import serializers
+import json
 
 
 def illness(request):
@@ -24,6 +25,9 @@ def get_illness(request, letter=None):
 	return HttpResponse(serializers.serialize('json', illness_list))
 
 def get_testimonial(request, id=None):
-	return HttpResponse(id)
+	response_data = {}
+	response_data["id"] = id
+	ls = [response_data]
+	return HttpResponse(json.dumps(ls))
 
 

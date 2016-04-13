@@ -10,7 +10,17 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
-import os
+import os, properties
+
+#load variables from properties file
+props = properties.Properties()
+props.load(open("tjsite/env.properties", "r"))
+
+RDS_DB_NAME = props.getProperty("db.name")
+RDS_USERNAME = props.getProperty("db.user")
+RDS_PASSWORD = props.getProperty("db.password")
+RDS_HOSTNAME = props.getProperty("db.hostname")
+RDS_PORT = props.getProperty("db.port")
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -74,13 +84,17 @@ WSGI_APPLICATION = 'tjsite.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': RDS_DB_NAME,
+        'USER': RDS_USERNAME,
+        'PASSWORD': RDS_PASSWORD,
+        'HOST': RDS_HOSTNAME,
+        'PORT': RDS_PORT,
     }
 }
+
 
 
 # Password validation

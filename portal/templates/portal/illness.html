@@ -59,43 +59,6 @@
 
 {% block scripts %}
 <script>
-	//the function that updates the view in illness.php
-	var updateView = function(){
-		$('.disease').click(function(){
-			$('.disease').each(function(){
-				this.style.textDecoration = 'none';
-				this.style.color = '#6c6e6f';
-			});
-			this.style.color = '#69987d';
-			this.style.textDecoration = 'underline';
-			this.disease.render();
-		});
-	}
-
-	//Event listener for search by alphabet
-	$('.alpha-search').click(function(){
-		
-		$('.alpha-search').each(function() {
-			this.style.textDecoration = 'none';
-			this.style.color = '#6c6e6f';
-		});
-		this.style.textDecoration = 'underline';
-		this.style.color = '#69987d';
-		var let = new Letter(this.innerHTML, '/portal/v1/letter');
-		let.fetch(updateView);
-		
-
-	});
-
-	//Event listener for search box
-	$('.search-box').keyup(function(e){
-		//checks if enter key pressed				
-		if(e.keyCode == 13){
-			var let = new Letter(this.value, '/portal/v1/letter');
-			let.fetch(updateView);
-		}
-	});
-
 
 	
 </script>
