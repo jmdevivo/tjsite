@@ -16,3 +16,14 @@ class Testimonial(models.Model):
 	patient_number = models.IntegerField()
 	testimonial_body = models.CharField(max_length=5000)
 	language = models.CharField(max_length=100)
+
+class FAQ(models.Model):
+	question = models.TextField()
+	answer=models.TextField()
+
+class SiteText(models.Model):
+	home_body = models.TextField()
+	home_side = models.TextField()
+	philosophy_body = models.TextField()
+	home_main = models.TextField()
+	about_main = models.TextField()
